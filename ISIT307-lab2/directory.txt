@@ -1,0 +1,4 @@
+plate_number:price:sellers:email:phone
+{"plate_number":"123","price":"231","email":"vdtn359@uowmail.edu.au","phone":"045-0009-8989","name":["Tuan","Tuan Anh"],"manu":"Honda","model":"Civic","image":"uploads\/56fdd870c6438png"}
+{"plate_number":"56","price":"5768","email":"vdtn359@uowmail.edu.au","phone":"000-0000-0000","name":["Tuan Nguyen"],"manu":"Hello","model":"World","image":"uploads\/56fdd8b0a9c0dpng"}
+{"plate_number":"789","price":"2312","email":"vdtn359@uowmail.edu.au","phone":"456-7890-1234","name":["Minh"],"manu":"Good","model":"Morning","image":"uploads\/56fdd8ec0a284png"}

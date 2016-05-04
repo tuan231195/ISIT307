@@ -1,0 +1,58 @@
+/*style brand image*/
+.navbar-brand h3 {
+    margin-top: -5px;
+    color:white;
+}
+
+
+.page-header
+{
+    color: red;
+}
+
+.items
+{
+    margin-top: 50px;
+}
+
+.wrapper
+{
+    padding: 4px;
+}
+.item
+{
+    padding: 4px;
+    position: relative;
+
+
+}
+
+.display-image{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display:block;
+    height:130px;
+    width:100%;
+}
+
+.table-image{
+    margin: 0px !important;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display:block;
+    height:130px;
+    width:180px;
+}
+
+
+.add-to-cart-btn
+{
+    position: absolute;
+    right: 27px;
+    bottom: 19px;
+}
+
+.margin-wrapper
+{
+    margin: 20px 0;
+}

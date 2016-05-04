@@ -1,0 +1,63 @@
+@IMPORT url("authorize.css");
+@IMPORT url("navbar.css");
+
+body { padding-top: 50px; }
+
+.page-header
+{
+    color: red;
+}
+
+.school, .course, .department, .classes
+{
+    margin-top: 15px !important;
+    padding-top: 0px;
+}
+
+.classes-list, .students-list
+{
+    padding-left: 18px;
+}
+
+.professors-list
+{
+    padding-top: 10px;
+    padding-left: 18px;
+}
+
+ul.pagination a
+{
+    height:34px;
+}
+
+
+
+.error
+{
+    color: red;
+    padding: 5px 0px;
+}
+
+.bg-primary.message
+{
+    padding: 5px 0px 5px 8px;
+    margin: 10px 0px;
+    color: white;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    height: 600px;
+    margin: auto;
+}
+
+.carousel-inner
+{
+    height: 600px;
+}
+
+.container-fluid.sliding-images
+{
+    padding: 0;
+}

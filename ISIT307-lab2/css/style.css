@@ -1,0 +1,41 @@
+.jumbotron
+{
+    height: 450px;
+    background: url('../images/background.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+
+.navbar
+{
+    margin: 0 !important;
+}
+.error
+{
+    color: red;
+    padding: 10px 0 0 0;
+}
+
+.page-header
+{
+    color: lightsalmon;
+    margin-bottom: 40px;
+}
+.ajax-body
+{
+    padding-top: 40px;
+}
+.plate-link
+{
+    text-decoration: none;
+}
+
+legend
+{
+    color: green;
+}

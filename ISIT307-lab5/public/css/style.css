@@ -1,0 +1,30 @@
+@IMPORT url("authorize.css");
+@IMPORT url("navbar.css");
+
+.page-header
+{
+    color: red;
+}
+
+.school, .course, .department, .classes
+{
+    margin-top: 15px !important;
+    padding-top: 0px;
+}
+
+.classes-list, .students-list
+{
+    padding-left: 18px;
+}
+
+.professors-list
+{
+    padding-top: 10px;
+    padding-left: 18px;
+}
+
+ul.pagination a
+{
+    height:34px;
+}
+

@@ -1,0 +1,13 @@
+body .item-wrap {
+  padding-bottom: 10px;
+}
+body .error-input {
+  border: 1px solid red;
+}
+body .res-list th,
+body .res-list td {
+  padding: 2%;
+}
+body #book-select {
+  display: none;
+}
