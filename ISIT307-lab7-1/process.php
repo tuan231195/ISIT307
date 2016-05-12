@@ -58,6 +58,9 @@ function validate_credit($num, $type)
 
 ?>
 <div class="container">
+    <div class = "page-header">
+        <h3>Thank you</h3>
+    </div>
     <?php
     // If this session is not valid, say so:
     if (!isset($_SESSION['validsubmit']) || !$_SESSION['validsubmit']) {

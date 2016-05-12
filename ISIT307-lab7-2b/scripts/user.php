@@ -25,10 +25,10 @@ if(!empty($result)) {
     $_SESSION['username'] = $row['username'];
     $_SESSION['studentid'] = $row['studentid'];
 
-    header("Location: ../profile.php");
+    header("Location: ../index.php");
     exit;
 }else {
-    header("Location: ../index.php?loginerror=false");
+    header("Location: ../login.php?loginerror=false");
     exit;
 }
 

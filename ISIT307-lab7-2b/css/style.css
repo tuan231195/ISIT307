@@ -11,3 +11,35 @@ body .res-list td {
 body #book-select {
   display: none;
 }
+
+.page-header
+{
+  color: red;
+}
+
+td, th
+{
+    vertical-align: middle !important;
+}
+
+.table th, .table td {
+  border-top: none !important;
+}
+
+select
+{
+  text-align: center;
+}
+
+.question-title
+{
+  color: #3c763d;
+  background-color: #dff0d9;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+legend
+{
+  color: red;
+}

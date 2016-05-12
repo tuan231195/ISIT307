@@ -1,0 +1,158 @@
+<html>
+<head>
+    <title>Hanoi Tower</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <style>
+        .table th, .table td {
+            border-top: none !important;
+        }
+
+        .rounds {
+            text-align: center;
+        }
+
+        .center {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header"><h4>Hanoi Tower</h4></div>
+    <div class="form-group">
+        <input type="text" id="num-disks" class="form-control" value='0' placeholder="Enter the number of disks"/>
+    </div>
+    <div class="form-group">
+        <button id="test-btn" type="button" class="btn btn-primary">Simulate</button>
+    </div>
+    <table class="table table-responsive">
+        <tr>
+            <td id="needle-1"></td>
+            <td id="needle-2"></td>
+            <td id="needle-3"></td>
+        </tr>
+    </table>
+    <p class="rounds text-primary">Round 0</p>
+
+</div>
+</body>
+<script type='text/javascript'>
+
+    var height = 15;
+    var stacks = new Array();
+    var stack1 = new Array();
+    var stack2 = new Array();
+    var stack3 = new Array();
+    stacks.push(stack1);
+    stacks.push(stack2);
+    stacks.push(stack3);
+    var num_disks;
+    var num_spaces;
+    var biggest_size = $("td:first-child").width() - 20;
+    var colors = new Array();
+    var smallest_size = 50;
+    var width_offset = 10;
+    var rounds = 0;
+    var tmp = new Array();
+
+    $("#test-btn").click(function () {
+        init();
+    });
+    function init() {
+        rounds = 0;
+        $(".rounds").text("Round " + rounds);
+        colors.splice(0, colors.length - 1);
+        stacks[0].length = 0;
+        stacks[1].length = 0;
+        stacks[2].length = 0;
+        num_disks = parseInt($('#num-disks').val());
+        num_spaces = num_disks + 3;
+        var table_height = height * num_spaces;
+        var compute_offset = biggest_size - width_offset * (num_disks - 1);
+        if (compute_offset < smallest_size) {
+            biggest_size = $("td:first-child").width() - 20;
+            width_offset = (biggest_size - smallest_size) * 1.0 / (num_disks - 1);
+        }
+        else {
+            width_offset = 10;
+            biggest_size = smallest_size + width_offset * (num_disks - 1);
+        }
+        $('td').height(table_height);
+        for (var i = 0; i < num_disks; i++) {
+            stacks[0].push(i);
+        }
+        randColor();
+        draw();
+        setTimeout(function(){
+            update();
+        }, 500)
+        solve_hanoi_towers(0, 1, 2, num_disks);
+    }
+
+    function update()
+    {
+        if (tmp.length != 0)
+        {
+            var elem = tmp[0];
+            var from = elem[0];
+            var to = elem[1];
+            tmp.shift();
+            var first = stacks[from][0];
+            stacks[from].shift();
+            stacks[to].unshift(first);
+            rounds++;
+            draw();
+            $(".rounds").text("Round " + rounds);
+            setTimeout(update, 500);
+        }
+    }
+    function draw() {
+        $("td").empty();
+        for (var j = 0; j < 3; j++) {
+            for (var i = num_spaces; i >= stacks[j].length; i--) {
+                var div = $("<div>", {"height": height, width: getSize(i)});
+                $("td").eq(j).append(div);
+            }
+
+            for (var i = 0; i <= stacks[j].length - 1; i++) {
+                var div = $("<div>", {"height": height, class: "center", width: getSize(i)});
+                div.css("background-color", colors[stacks[j][i]]);
+                $("td").eq(j).append(div);
+            }
+
+        }
+
+    }
+
+    function randColor() {
+        var arr = [32, 96, 160, 224];
+        for (var i = 0; i < num_disks; i++) {
+            var x = arr[Math.floor(Math.random() * 4)];
+            var y = arr[Math.floor(Math.random() * 4)];
+            var z = arr[Math.floor(Math.random() * 4)];
+            colors.push("rgb(" + x + "," + y + "," + z + ")");
+        }
+    }
+    function getSize(pos) {
+        return biggest_size - (num_disks - 1 - pos) * width_offset;
+
+    }
+
+    function solve_hanoi_towers(from, to, middle, num) {
+        if (num == 0)
+            return;
+        solve_hanoi_towers(from, middle, to, num - 1);
+        tmp.push(new Array(from, to));
+        solve_hanoi_towers(middle, to, from, num - 1);
+
+    }
+</script>
+
+</html>

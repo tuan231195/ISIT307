@@ -2,7 +2,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'dotuan2311');
-define('DB_DATABASE', 'ISIT307-lab7-shop');
+define('DB_DATABASE', 'ISIT307-lab7-exam');
 
 class DBHandler
 {
@@ -64,6 +64,11 @@ class DBHandler
         $row = $res->fetch_array();
         $stmt->close();
         return $row[0];
+    }
+
+    public function updateQuery($query)
+    {
+        $this->conn->query($query) or die("Cannot execute query");
     }
 
     public function executeQuery($query)
