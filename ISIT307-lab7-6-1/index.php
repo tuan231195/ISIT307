@@ -23,5 +23,8 @@ function find_smallests($arr, &$smallest)
 
 $arr1 = array(0, array(1,2,3), array(-9, 3));
 $smallest = PHP_INT_MAX;
+echo "<pre>";
+print_r($arr1);
+echo "</pre>";
 find_smallests($arr1, $smallest);
 echo $smallest;
